@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2pdsdshow2xy"]
+
+[ext_resource type="PackedScene" uid="uid://x5epeipgqnf" path="res://Player/character.tscn" id="1_o8g0q"]
+[ext_resource type="PackedScene" uid="uid://4c0cklhlq43p" path="res://World/arbusto.tscn" id="2_idfky"]
+
+[node name="Mundo2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_o8g0q")]
+position = Vector2(80, 72)
+
+[node name="Arbusto" parent="." instance=ExtResource("2_idfky")]
+position = Vector2(24, 24)
+
+[node name="Arbusto2" parent="." instance=ExtResource("2_idfky")]
+position = Vector2(256, 48)
+
+[node name="Arbusto3" parent="." instance=ExtResource("2_idfky")]
+position = Vector2(32, 152)
+
+[node name="Arbusto4" parent="." instance=ExtResource("2_idfky")]
+position = Vector2(224, 144)

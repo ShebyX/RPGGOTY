@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://njdcwqn5n5pa"]
+
+[ext_resource type="Texture2D" uid="uid://cmr2j88tm4hxv" path="res://World/Tree.png" id="1_swipx"]
+
+[sub_resource type="Animation" id="Animation_i3ubs"]
+resource_name = "MovimientoAire"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0349066, 0.0349066, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_p4bko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02rww"]
+_data = {
+"MovimientoAire": SubResource("Animation_i3ubs"),
+"RESET": SubResource("Animation_p4bko")
+}
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+skew = -0.0349066
+texture = ExtResource("1_swipx")
+offset = Vector2(0, -15)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -3)
+scale = Vector2(1.09028, 1.14145)
+polygon = PackedVector2Array(-5.50318, -4.76837e-07, -0.917197, -4.76837e-07, 4.58599, -4.76837e-07, 2.75159, 8.76081, -4.58599, 8.76081)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MovimientoAire"
+libraries = {
+"": SubResource("AnimationLibrary_02rww")
+}

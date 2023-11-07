@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://4c0cklhlq43p"]
+
+[ext_resource type="Texture2D" uid="uid://d2t2yyvqh3gr7" path="res://World/Bush.png" id="1_bsx11"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qoca6"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_o716b"]
+resource_name = "MovimientoAire"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0523599, 0.0, 0.0523599]
+}
+
+[sub_resource type="Animation" id="Animation_q23lw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcsoj"]
+_data = {
+"MovimientoAire": SubResource("Animation_o716b"),
+"RESET": SubResource("Animation_q23lw")
+}
+
+[node name="Arbusto" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+skew = -0.0523599
+texture = ExtResource("1_bsx11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_qoca6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MovimientoAire"
+libraries = {
+"": SubResource("AnimationLibrary_tcsoj")
+}
