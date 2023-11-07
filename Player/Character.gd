@@ -3,7 +3,7 @@ extends CharacterBody2D
 const ACCELERATION = 500
 const MAX_SPEED = 100 #VELOCIDAD MÁXIMO DEL JUGADOR
 const FRICTION = 500 #
-
+const hola = "hola"
 var velocidad = Vector2.ZERO
 
 @onready var player = $"."
