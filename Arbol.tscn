@@ -43,6 +43,7 @@ _data = {
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 skew = -0.0349066
 texture = ExtResource("1_swipx")
 offset = Vector2(0, -15)

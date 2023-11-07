@@ -13,6 +13,8 @@ var velocidad = Vector2.ZERO
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var timer = $Timer
 
+func _ready():
+	animation_tree.active = true
 
 func _physics_process(delta):
 	
@@ -31,7 +33,7 @@ func _physics_process(delta):
 		
 	else:
 		if $Timer.time_left <= 1.2:
-			audio_stream_player.pitch_scale = randf_range(0.8, 1.2)
+			audio_stream_player.pitch_scale = randf_range(1.0, 1.0)
 			audio_stream_player.play()
 			$Timer.start(0)
 	

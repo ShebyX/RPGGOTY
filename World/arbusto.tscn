@@ -2,10 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d2t2yyvqh3gr7" path="res://World/Bush.png" id="1_bsx11"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qoca6"]
-radius = 5.0
-height = 14.0
-
 [sub_resource type="Animation" id="Animation_o716b"]
 resource_name = "MovimientoAire"
 length = 2.0
@@ -44,19 +40,30 @@ _data = {
 "RESET": SubResource("Animation_q23lw")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qoca6"]
+radius = 5.0
+height = 14.0
+
 [node name="Arbusto" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
 skew = -0.0523599
 texture = ExtResource("1_bsx11")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_qoca6")
+offset = Vector2(0, -6)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "MovimientoAire"
 libraries = {
 "": SubResource("AnimationLibrary_tcsoj")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_qoca6")
+disabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -2)
+polygon = PackedVector2Array(-3, -1, -2, -4, 3, -4, 4, -1, 3, 2, -2, 2)

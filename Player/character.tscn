@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://x5epeipgqnf"]
+[gd_scene load_steps=31 format=3 uid="uid://x5epeipgqnf"]
 
 [ext_resource type="Script" path="res://Player/Character.gd" id="1_hby5v"]
 [ext_resource type="Texture2D" uid="uid://ji8u3a8wwtr1" path="res://Player/Player.png" id="2_xbclb"]
@@ -159,8 +159,42 @@ tracks/0/keys = {
 "values": [2]
 }
 
+[sub_resource type="Animation" id="Animation_esmqx"]
+resource_name = "AtacarAbajo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_v70mr"]
+resource_name = "AtacarIzquierda"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kpflc"]
 _data = {
+"AtacarAbajo": SubResource("Animation_esmqx"),
+"AtacarIzquierda": SubResource("Animation_v70mr"),
 "CorrerAbajo": SubResource("Animation_nfh20"),
 "CorrerArriba": SubResource("Animation_w5die"),
 "CorrerDerecha": SubResource("Animation_n8gw1"),
